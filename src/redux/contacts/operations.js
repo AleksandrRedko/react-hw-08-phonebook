@@ -35,45 +35,17 @@ export const deleteContact = createAsyncThunk(
     }
   }
 );
-
-// import {
-//   fetchingInProgress,
-//   fetchingSuccess,
-//   fetchingError,
-//   addedInProgress,
-//   addedSuccess,
-//   addedError,
-//   deleteInProgress,
-//   deleteSuccess,
-//   deleteError,
-// } from "./sliceContacts";
-
-// export const fetchContacts = () => async (dispatch) => {
-// try {
-//   dispatch(fetchingInProgress());
-//   const response = await axios.get("/contacts");
-//   dispatch(fetchingSuccess(response.data));
-// } catch (error) {
-//   dispatch(fetchingError(error.message));
-// }
-// };
-
-// export const addContact = (newContact) => async (dispatch) => {
-//   try {
-//     dispatch(addedInProgress());
-//     const response = await axios.post("/contacts", newContact);
-//     dispatch(addedSuccess(response.data));
-//   } catch (error) {
-//     dispatch(addedError(error.message));
-//   }
-// };
-// export const deleteContact = (id) => async (dispatch) => {
-//   try {
-//     dispatch(deleteInProgress());
-//     const response = await axios.delete(`/contacts/${id} `);
-
-//     dispatch(deleteSuccess(response.data));
-//   } catch (error) {
-//     dispatch(deleteError(error.message));
-//   }
-// };
+export const updateContact = createAsyncThunk(
+  'contacts/updateContact',
+  async ({ currentContact, name, number }, thunkAPI) => {
+    try {
+      const res = await axios.patch(`/contacts/${currentContact.id}`, {
+        name,
+        number,
+      });
+      return res.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);

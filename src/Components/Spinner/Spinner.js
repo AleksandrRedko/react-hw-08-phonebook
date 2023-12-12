@@ -1,4 +1,4 @@
-import { Bars } from 'react-loader-spinner';
+import { RotatingLines } from 'react-loader-spinner';
 import { createPortal } from 'react-dom';
 
 const modalRoot = document.querySelector('#modal-root');
@@ -19,13 +19,11 @@ const Spinner = () => {
         zIndex: 1200,
       }}
     >
-      <Bars
-        height="80"
-        width="80"
-        color="#4fa94d"
-        ariaLabel="bars-loading"
-        wrapperStyle={{}}
-        wrapperClass=""
+      <RotatingLines
+        strokeColor="grey"
+        strokeWidth="5"
+        animationDuration="0.75"
+        width="96"
         visible={true}
       />
     </div>,

@@ -42,25 +42,28 @@
   &:hover,
   &:focus,
   &:active:focus {
-    color: #ff5722;
+    color: #0097ee;
     outline: none;
-    border-bottom: 1px solid #ff5722;
+    border-bottom: 1px solid #0097ee;
 
     &::placeholder {
-      color: #ff5722;
+      color: #0097ee;
       position: relative;
 
       transform: translateY(-20px);
     }
   }
 }
+
 .button {
   padding: 5px 10px;
   border-radius: 3px;
-  border: 1px solid grey;
+  border: 1px solid #0097ee;
+  color: #0097ee;
   background-color: white;
   transition: 0.5s;
 }
+
 .button:hover {
   border: 1px solid rgb(18, 226, 35);
   color: rgb(18, 226, 35);

@@ -5,5 +5,19 @@
 }
 
 .username {
+  display: flex;
+  align-items: center;
+  font-size: medium;
+  justify-content: space-between;
   font-weight: 700;
+}
+.button {
+  padding: 8px;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.button:hover {
+  transform: scale(1.2);
 }

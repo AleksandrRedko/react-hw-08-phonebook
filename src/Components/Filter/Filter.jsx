@@ -15,8 +15,12 @@ const Filter = () => {
 
   return (
     <label className={s.label}>
-      Find contacts by name
-      <input type="text" value={filter.request} onChange={handleChangeFilter} />
+      <input
+        type="text"
+        value={filter.request}
+        onChange={handleChangeFilter}
+        placeholder="Find contacts by name"
+      />
     </label>
   );
 };
